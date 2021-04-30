@@ -1,0 +1,17 @@
+// Clase 148 Navegacion
+
+yarn add @react-navigation/native
+
+yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+npx pod-install ios
+
+al inicio importo
+
+import 'react-native-gesture-handler';
+
+Envolver la App
+
+<NavigationContainer>
+    <Text>Peliculasƒ</Text>
+</NavigationContainer>
