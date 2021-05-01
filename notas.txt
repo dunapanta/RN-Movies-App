@@ -15,3 +15,13 @@ Envolver la App
 <NavigationContainer>
     <Text>Peliculasƒ</Text>
 </NavigationContainer>
+
+
+// Stack Navigator
+npm install @react-navigation/stack
+
+Crear Navigation y envolverlo
+
+<NavigationContainer>
+    <Navigation />
+</NavigationContainer>
