@@ -25,3 +25,18 @@ Crear Navigation y envolverlo
 <NavigationContainer>
     <Navigation />
 </NavigationContainer>
+
+//CLASE 149
+instalar axios
+
+yarn add axios
+
+se crea base de axios para las peticiones 
+
+const movieDB = axios.create({
+  baseURL: 'https://api.themoviedb.org/3/movie',
+  params: {
+    api_key: 'f9b276a8a665a41333c2def2f632a2e4',
+    language: 'es-ES',
+  },
+});
