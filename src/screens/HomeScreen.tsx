@@ -1,15 +1,9 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {
-  View,
-  ActivityIndicator,
-  Dimensions,
-  FlatList,
-  Text,
-  ScrollView,
-} from 'react-native';
+import {View, ActivityIndicator, Dimensions, ScrollView} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
+import HorizontalSlider from '../components/HorizontalSlider';
 
 import {PosterMovie} from '../components/PosterMovie';
 import {useMovies} from '../hooks/useMovies';
@@ -38,20 +32,10 @@ export const HomeScreen = () => {
           sliderWidth={width}
           itemWidth={width - 75}
           data={movies}
+          inactiveSlideOpacity={0.8}
         />
         {/* Peliculas Populares */}
-        <View style={{backgroundColor: 'red', marginTop: 10, height: 250}}>
-          <Text style={{fontSize: 30, fontWeight: 'bold'}}>En Cine:</Text>
-          <FlatList
-            keyExtractor={item => item.id.toString()}
-            data={movies}
-            renderItem={({item}: any) => (
-              <PosterMovie movie={item} width={140} height={200} />
-            )}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          />
-        </View>
+        <HorizontalSlider title="En Cines:" movies={movies} />
       </View>
     </ScrollView>
   );
