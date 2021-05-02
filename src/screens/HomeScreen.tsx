@@ -1,10 +1,13 @@
 import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {View, ActivityIndicator} from 'react-native';
+import {View, ActivityIndicator, Dimensions} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import Carousel from 'react-native-snap-carousel';
 
 import {PosterMovie} from '../components/PosterMovie';
 import {useMovies} from '../hooks/useMovies';
+
+const {width} = Dimensions.get('window');
 
 export const HomeScreen = () => {
   const navigation = useNavigation();
@@ -22,7 +25,12 @@ export const HomeScreen = () => {
 
   return (
     <View style={{marginTop: top + 20}}>
-      <PosterMovie movie={movies[0]} />
+      <Carousel
+        renderItem={({item}: any) => <PosterMovie movie={item} />}
+        sliderWidth={width}
+        itemWidth={width - 75}
+        data={movies}
+      />
     </View>
   );
 };

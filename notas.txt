@@ -40,3 +40,14 @@ const movieDB = axios.create({
     language: 'es-ES',
   },
 });
+
+//CLASE 153
+Sombras para ios Android e Ios
+https://ethercreative.github.io/react-native-shadow-generator/
+
+//CLASE 154
+Carrousel
+https://github.com/meliorence/react-native-snap-carousel
+
+yarn add react-native-snap-carousel
+yarn add -D @types/react-native-snap-carousel
