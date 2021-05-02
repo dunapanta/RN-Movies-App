@@ -5,33 +5,40 @@ import {Movie} from '../interfaces/movieInterface';
 
 interface Props {
   movie: Movie;
+  height?: number;
+  width?: number;
 }
 
-export const PosterMovie = ({movie}: Props) => {
+export const PosterMovie = ({movie, height = 400, width = 280}: Props) => {
   const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
   return (
-    <View style={styles.card}>
-      <Image source={{uri}} style={styles.image} />
+    <View style={cardStyles({height, width}).card}>
+      <Image source={{uri}} style={imageStyles.image} />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  card: {
-    width: 280,
-    height: 400,
-    borderRadius: 18,
+const cardStyles = ({height, width}: any) =>
+  StyleSheet.create({
+    card: {
+      width: width,
+      height: height,
+      borderRadius: 18,
+      marginHorizontal: 5,
 
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+
+      elevation: 8,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+  });
 
-    elevation: 8,
-  },
+const imageStyles = StyleSheet.create({
   image: {
     flex: 1,
     borderRadius: 18,
