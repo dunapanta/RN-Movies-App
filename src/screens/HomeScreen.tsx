@@ -14,7 +14,7 @@ export const HomeScreen = () => {
   const navigation = useNavigation();
   const {top} = useSafeAreaInsets();
 
-  const {movies, loading} = useMovies();
+  const {nowPlaying, popular, topRated, upcoming, loading} = useMovies();
 
   if (loading) {
     return (
@@ -31,11 +31,13 @@ export const HomeScreen = () => {
           renderItem={({item}: any) => <PosterMovie movie={item} />}
           sliderWidth={width}
           itemWidth={width - 75}
-          data={movies}
+          data={nowPlaying}
           inactiveSlideOpacity={0.8}
         />
         {/* Peliculas Populares */}
-        <HorizontalSlider title="En Cines:" movies={movies} />
+        <HorizontalSlider title="Populares:" movies={popular} />
+        <HorizontalSlider title="Mejores Puntuadas:" movies={topRated} />
+        <HorizontalSlider title="Proximamente:" movies={upcoming} />
       </View>
     </ScrollView>
   );
