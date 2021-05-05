@@ -37,6 +37,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = peliculas/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = peliculas/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = peliculas/main.m; sourceTree = "<group>"; };
+		5E19044A2643376F00F1C7E8 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = peliculas/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91AA06678383725D21E66A2E /* Pods-peliculas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-peliculas.release.xcconfig"; path = "Target Support Files/Pods-peliculas/Pods-peliculas.release.xcconfig"; sourceTree = "<group>"; };
 		AFAEA271DB372BECC04998A1 /* libPods-peliculas-peliculasTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-peliculas-peliculasTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +107,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5E1904492643372D00F1C7E8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5E19044A2643376F00F1C7E8 /* Ionicons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +125,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				5E1904492643372D00F1C7E8 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* peliculas */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* peliculasTests */,
@@ -145,7 +155,6 @@
 				B60E826D884A22E2334E560E /* Pods-peliculas-peliculasTests.debug.xcconfig */,
 				F3724F1D404CB311807421BB /* Pods-peliculas-peliculasTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

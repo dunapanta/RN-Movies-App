@@ -51,3 +51,41 @@ https://github.com/meliorence/react-native-snap-carousel
 
 yarn add react-native-snap-carousel
 yarn add -D @types/react-native-snap-carousel
+
+// CLASE 160 Instalacion iconos
+
+https://github.com/oblador/react-native-vector-icons
+
+yarn add react-native-vector-icons
+yarn add -D @types/react-native-vector-icons
+
+Android
+
+android/app/build.gradle
+
+project.ext.vectoricons = [
+    iconFontNames: [ 'Ionicons.ttf' ] // Name of the font files you want to copy
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+//Ios
+abrir en Xcode peliculas.xcworkspace
+
+abrir node_modules/react-native-vector-icons/Fonts
+
+en Xcode
+
+clic derecho new group llamado Fonts
+
+arrastro las fuentes que voy a utilizar ej Ionicons.ttf
+
+check copy items if needed ----> Aceptar
+
+Abro como codigo info.plist
+
+<array>
+  <string>Ionicons.ttf</string>
+</array>
+
+npx pod-install
