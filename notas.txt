@@ -89,3 +89,7 @@ Abro como codigo info.plist
 </array>
 
 npx pod-install
+
+//CLASE para formato de dinero
+yarn add currency-formatter
+yarn add -D @types/currency-formatter
