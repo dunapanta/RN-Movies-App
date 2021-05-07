@@ -28,13 +28,13 @@ export const PosterMovie = ({movie, height = 400, width = 280}: Props) => {
 const cardStyles = ({height, width}: any) =>
   StyleSheet.create({
     card: {
+      flexDirection: 'row',
       width: width,
       height: height,
       borderRadius: 18,
       marginHorizontal: 5,
       paddingBottom: 4,
       paddingHorizontal: 4,
-      
 
       shadowColor: '#000',
       shadowOffset: {
