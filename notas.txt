@@ -95,3 +95,15 @@ yarn add currency-formatter
 yarn add -D @types/currency-formatter
 
 //CLASE 162 Fade In
+
+const opacity = useRef(new Animated.Value(0.2)).current;
+
+  const fadeIn = () => {
+    Animated.timing(opacity, {
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  // FadeOut

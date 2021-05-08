@@ -12,6 +12,14 @@ export const FadeScreen = () => {
     }).start();
   };
 
+  const FadeOut = () => {
+    Animated.timing(opacity, {
+      toValue: 0.2,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start();
+  };
+
   return (
     <View
       style={{
@@ -33,6 +41,8 @@ export const FadeScreen = () => {
       />
 
       <Button title="FadedIn" onPress={fadeIn} />
+
+      <Button title="FadedOut" onPress={FadeOut} />
     </View>
   );
 };
