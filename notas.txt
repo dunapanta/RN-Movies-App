@@ -116,3 +116,11 @@ const opacity = useRef(new Animated.Value(0.2)).current;
 
   npx pod-install
 
+  //CLASE 175 Extraer Colores Imagenes
+  https://github.com/osamaqarem/react-native-image-colors
+  yarn add react-native-image-colors
+  npx pod-install
+
+  import ImageColors from "react-native-image-colors"
+
+  const colors = await ImageColors.getColors(uri, config)
