@@ -1,16 +1,20 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, StyleSheet} from 'react-native';
+
 import LinearGadient from 'react-native-linear-gradient';
+import {GradientContext} from '../context/GradientContext';
 
 interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
 export const GradientBackground = ({children}: Props) => {
+  const {colors} = useContext(GradientContext);
+
   return (
     <View style={{flex: 1}}>
       <LinearGadient
-        colors={['#668877', '#558875', 'white']}
+        colors={[colors.primary, colors.secondary, 'white']}
         style={{...StyleSheet.absoluteFillObject}}
         start={{x: 0.1, y: 0.1}}
         end={{x: 0.5, y: 0.8}}
