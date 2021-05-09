@@ -1,23 +1,37 @@
-import {useNavigation} from '@react-navigation/core';
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import {View, ActivityIndicator, Dimensions, ScrollView} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
 import {GradientBackground} from '../components/GradientBackground';
 import HorizontalSlider from '../components/HorizontalSlider';
-import ImageColors from 'react-native-image-colors';
 
 import {PosterMovie} from '../components/PosterMovie';
 import {useMovies} from '../hooks/useMovies';
 import {getImageColors} from '../helpers/getColors';
+import {GradientContext} from '../context/GradientContext';
 
 const {width} = Dimensions.get('window');
 
 export const HomeScreen = () => {
-  const navigation = useNavigation();
+  const {setPosterColors} = useContext(GradientContext);
   const {top} = useSafeAreaInsets();
 
   const {nowPlaying, popular, topRated, upcoming, loading} = useMovies();
+
+  const getPosterColors = async (index: number) => {
+    const movie = nowPlaying[index];
+    const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const [primary = '#22ff77', secondary = '#558800'] = await getImageColors(
+      uri,
+    );
+    setPosterColors({primary, secondary});
+  };
+
+  useEffect(() => {
+    if (nowPlaying.length > 0) {
+      getPosterColors(0);
+    }
+  }, [nowPlaying]);
 
   if (loading) {
     return (
@@ -26,12 +40,6 @@ export const HomeScreen = () => {
       </View>
     );
   }
-
-  const getPosterColors = async (index: number) => {
-    const movie = nowPlaying[index];
-    const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-    const [primary, secondary] = await getImageColors(uri);
-  };
 
   return (
     <GradientBackground>
